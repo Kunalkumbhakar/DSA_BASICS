@@ -1,0 +1,45 @@
+// linkedlist creation //
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node 
+{
+    int data;
+    struct node*next;
+
+};
+ 
+ 
+void create(struct node * ptr)
+{
+while (ptr != NULL)
+{
+    printf("%d \n",ptr->data);
+     ptr = ptr->next;
+}
+}
+int main()
+{
+    struct node * head;
+    struct node * kunal;
+    struct node * k;
+    
+
+    head=(struct node*)malloc(sizeof(struct node));
+    kunal=(struct node*)malloc(sizeof(struct node));
+    k=(struct node*)malloc(sizeof(struct node));
+
+    head->data=7;
+    head->next=kunal;
+
+    kunal->data=11;
+    kunal->next=k;
+
+    k->data=12;
+    k->next=NULL;
+
+    create(head);
+
+    return 0;
+}
